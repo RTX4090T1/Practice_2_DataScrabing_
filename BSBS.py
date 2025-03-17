@@ -24,7 +24,7 @@ class BSBS:  # Beautiful Soup Book Scraper
                 break
             itemCounterPerPage = 0
             for book in booksByCategory.find_all("li"):
-                self.logDataIntoFile(book.find("a").find(text=True, recursive=False), book.find("a").get("href"))
+                self.logDataIntoFile(book.find("h3").find("a").find(text=True, recursive=False), book.find("a").get("href"))
                 itemCounterPerPage += 1
 
             next_page = objectOfSoup.find("li", class_="next")
